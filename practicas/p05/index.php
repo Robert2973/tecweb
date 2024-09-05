@@ -95,7 +95,7 @@ $variables = [
         $z[0] = "MySQL";
 
         // Imprimir los resultados del ejercicio 3
-        echo "<p>\$a = $a</p>"; // PHP55a version de PHP
+        echo "<p>\$a = $a</p>"; 
         echo "<p>\$b = $b</p>"; // Parte numérica de $b multiplicada por $c
         echo "<p>\$c = $c</p>"; // Parte numérica de $b multiplicada por 10
         echo "<p>\$z[0] = {$z[0]}</p>"; // MySQL
@@ -133,7 +133,7 @@ $variables = [
         $z[0] = "MySQL";
 
         // Imprimir los resultados usando $GLOBALS
-        echo "<p>\$GLOBALS['a'] = " . $GLOBALS['a'] . "</p>"; // PHP55a version de PHP
+        echo "<p>\$GLOBALS['a'] = " . $GLOBALS['a'] . "</p>"; 
         echo "<p>\$GLOBALS['b'] = " . $GLOBALS['b'] . "</p>"; // Parte numérica de $b multiplicada por $c
         echo "<p>\$GLOBALS['c'] = " . $GLOBALS['c'] . "</p>"; // Parte numérica de $b multiplicada por 10
         echo "<p>\$GLOBALS['z'][0] = " . $GLOBALS['z'][0] . "</p>"; // MySQL
@@ -229,7 +229,6 @@ $variables = [
         echo "<p>Nombre del sistema operativo: $server_os</p>";
         echo "<p>Idioma del navegador: $client_language</p>";
     }
-
     // Llamar a la función del Ejercicio 7
     ejercicio7();
     ?>
