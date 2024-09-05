@@ -153,9 +153,9 @@ $variables = [
     {
         // Inicializar las variables
         $a = "7 personas";
-        $b = (integer) $a;
+        $b = (int) $a;
         $a = "9E3";
-        $c = (double) $a;
+        $c = (float) $a;
 
         // Imprimir los valores y tipos
         echo "<p>\$a = $a </p>";
@@ -169,18 +169,19 @@ $variables = [
 
 
 
-<!-- Ejercicio 6: Valores booleanos -->
-<h2>Ejercicio 6: Valores booleanos</h2>
+    <!-- Ejercicio 6: Valores booleanos -->
+    <h2>Ejercicio 6: Valores booleanos</h2>
     <?php
     // Función para el Ejercicio 6
-    function ejercicio6() {
+    function ejercicio6()
+    {
         // Inicializar las variables del ejercicio 6
         $a = "0";
         $b = "TRUE";
         $c = FALSE;
-        $d = ($a OR $b);
-        $e = ($a AND $c);
-        $f = ($a XOR $b);
+        $d = ($a or $b);
+        $e = ($a and $c);
+        $f = ($a xor $b);
 
         // Convertir valores booleanos a cadenas para mostrar con echo
         $c_string = $c ? 'true' : 'false';
@@ -200,13 +201,37 @@ $variables = [
         echo "<p>Resultado de var_dump para \$f:</p>";
         var_dump($f);
 
-         // Convertir valores booleanos para mostrar con echo
-         echo "<p><strong>Valores booleanos convertidos:</strong></p>";
-         echo "<p>\$c (booleano) convertido a cadena: " . ($c ? 'TRUE' : 'FALSE') . "</p>";
-         echo "<p>\$e (booleano) convertido a cadena: " . ($e ? 'TRUE' : 'FALSE') . "</p>";
+        // Convertir valores booleanos para mostrar con echo
+        echo "<p><strong>Valores booleanos convertidos:</strong></p>";
+        echo "<p>\$c (booleano) convertido a cadena: " . ($c ? 'TRUE' : 'FALSE') . "</p>";
+        echo "<p>\$e (booleano) convertido a cadena: " . ($e ? 'TRUE' : 'FALSE') . "</p>";
     }
     // Llamar a la función del Ejercicio 6
     ejercicio6();
+    ?>
+
+
+
+
+    <!-- Ejercicio 7: Uso de $_SERVER -->
+    <h2>Ejercicio 7: Uso de $_SERVER</h2>
+    <?php
+    // Función para el Ejercicio 7
+    function ejercicio7()
+    {
+        $apache_version = $_SERVER['SERVER_SOFTWARE'];
+        $php_version = phpversion();
+        $server_os = PHP_OS;
+        $client_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+
+        echo "<p>Versión de Apache: $apache_version</p>";
+        echo "<p>Versión de PHP: $php_version</p>";
+        echo "<p>Nombre del sistema operativo: $server_os</p>";
+        echo "<p>Idioma del navegador: $client_language</p>";
+    }
+
+    // Llamar a la función del Ejercicio 7
+    ejercicio7();
     ?>
 </body>
 
