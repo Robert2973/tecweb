@@ -145,6 +145,29 @@ $variables = [
 
 
 
+    <!-- Ejercicio 5: Nuevas variables -->
+    <h2>Ejercicio 5: Nuevas variables</h2>
+    <?php
+    // Función para el Ejercicio 5
+    function ejercicio5()
+    {
+        // Inicializar las variables
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
+
+        // Imprimir los valores y tipos
+        echo "<p>\$a = $a </p>";
+        echo "<p>\$b = $b </p>";
+        echo "<p>\$c = $c </p>";
+    }
+    // Llamar a la función del Ejercicio 5
+    ejercicio5();
+    ?>
+
+
+
 </body>
 
 </html>
