@@ -168,6 +168,46 @@ $variables = [
 
 
 
+
+<!-- Ejercicio 6: Valores booleanos -->
+<h2>Ejercicio 6: Valores booleanos</h2>
+    <?php
+    // Función para el Ejercicio 6
+    function ejercicio6() {
+        // Inicializar las variables del ejercicio 6
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        // Convertir valores booleanos a cadenas para mostrar con echo
+        $c_string = $c ? 'true' : 'false';
+        $e_string = $e ? 'true' : 'false';
+
+        // Imprimir resultados usando var_dump
+        echo "<p>Resultado de var_dump para \$a:</p>";
+        var_dump($a);
+        echo "<p>Resultado de var_dump para \$b:</p>";
+        var_dump($b);
+        echo "<p>Resultado de var_dump para \$c:</p>";
+        var_dump($c);
+        echo "<p>Resultado de var_dump para \$d:</p>";
+        var_dump($d);
+        echo "<p>Resultado de var_dump para \$e:</p>";
+        var_dump($e);
+        echo "<p>Resultado de var_dump para \$f:</p>";
+        var_dump($f);
+
+         // Convertir valores booleanos para mostrar con echo
+         echo "<p><strong>Valores booleanos convertidos:</strong></p>";
+         echo "<p>\$c (booleano) convertido a cadena: " . ($c ? 'TRUE' : 'FALSE') . "</p>";
+         echo "<p>\$e (booleano) convertido a cadena: " . ($e ? 'TRUE' : 'FALSE') . "</p>";
+    }
+    // Llamar a la función del Ejercicio 6
+    ejercicio6();
+    ?>
 </body>
 
 </html>
