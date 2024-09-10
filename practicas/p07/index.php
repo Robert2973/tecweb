@@ -1,7 +1,3 @@
-<?php
-include 'src/funciones.php'
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +15,10 @@ include 'src/funciones.php'
     </form>
 
     <?php
+    include 'C:\xampp\htdocs\tecweb\practicas\p07\scr\funciones.php';
         if(isset($_GET['numero'])){
             $num = $_GET['numero'];
-         echo '<h3>R= ' .esMultiplo($num). '/h3';
+         echo '<h3>R= ' . esMultiplo($num) . '</h3>';
         }
     ?>
 </body>
