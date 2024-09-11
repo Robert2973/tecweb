@@ -21,5 +21,30 @@
          echo '<h3>R= ' . esMultiplo($num) . '</h3>';
         }
     ?>
+
+    <h2> Ejercicio 2</h2>
+    <?php
+    $resultado = generarSecuencia();
+    $numeros = $resultado['numeros'];
+    $iteraciones = $resultado['iteraciones'];
+    $todosLosNumeros = $resultado['todosLosNumeros'];
+    $totalNumerosGenerados = $resultado['totalNumerosGenerados'];
+    
+    // Mostrar todos los números en renglones de 3 números
+    echo '<p>Números generados:</p>';
+    echo '<table border="1">';
+    echo '<tr>';
+    foreach ($todosLosNumeros as $index => $num) {
+        // Cada 3 números, se inicia una nueva fila
+        if ($index > 0 && $index % 3 == 0) {
+            echo '</tr><tr>';
+        }
+        echo '<td>' . $num . '</td>';
+    }
+    echo '</tr>';
+    echo '</table>';
+    echo '<p>' .$totalNumerosGenerados.' numeros obtenidos en ' .$iteraciones. ' iteraciones </p>';
+    ?>
+
 </body>
 </html>
