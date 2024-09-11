@@ -35,4 +35,20 @@ function generarSecuencia(){
     return ['numeros' => $numeros, 'iteraciones' => $iteraciones, 'todosLosNumeros' => $todosLosNumeros,  'totalNumerosGenerados' => count($todosLosNumeros)];
 }
 
+
+function MultiploWhile($multi) {
+    $random = rand(1, 100);
+    while ($random % $multi !== 0) {
+        $random = rand(1, 100);
+    }
+    return $random;
+}
+
+function MultiploDoWhile($multi) {
+    do {
+        $random = rand(1, 100);
+    } while ($random % $multi !== 0);
+    return $random;
+}
+
 ?>
