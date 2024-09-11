@@ -7,7 +7,7 @@ function esMultiplo($num)
         return 'El número ' . $num . ' NO es múltiplo de 5 y 7.';
     }
 }
-
+ 
 function generarSecuencia(){
     $numeros = [];
     $iteraciones = 0;
@@ -49,6 +49,15 @@ function MultiploDoWhile($multi) {
         $random = rand(1, 100);
     } while ($random % $multi !== 0);
     return $random;
+}
+
+
+function Letras(){
+    $arreglo = [];
+    for ($i = 97; $i <= 122; $i++){
+        $arreglo[$i] = chr($i);
+    }
+    return $arreglo;
 }
 
 ?>

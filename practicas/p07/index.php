@@ -48,7 +48,7 @@
     echo '<p>' . $totalNumerosGenerados . ' numeros obtenidos en ' . $iteraciones . ' iteraciones </p>';
     ?>
 
-    <h2>Eejrcicio 3</h2>
+    <h2>Ejercicio 3</h2>
     <form action="index.php" method="get">
         Número: <input type="text" name="multiplo">
         <input type="submit" value="Encontrar múltiplo">
@@ -60,6 +60,16 @@
         echo '<h3>Resultado ciclo while: ' . MultiploWhile($multi) . '</h3>';
         echo '<h3>Resultado ciclo do-while: ' . MultiploDoWhile($multi) . '</h3>';
     }
+    ?>
+
+    <h2>Ejercicio 4</h2>
+    <?php
+    $abecedario = Letras();
+    echo '<table border="1">';
+    foreach ($abecedario as $key => $value) {
+        echo "<tr><td>$key</td><td>$value</td></tr>";
+    }
+    echo '</table>';
     ?>
 
 
