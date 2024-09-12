@@ -60,4 +60,12 @@ function Letras(){
     return $arreglo;
 }
 
+function Control($edad, $sexo) {
+    if ($sexo == 'femenino' && $edad >= 18 && $edad <= 35) {
+        return 'Bienvenida, usted está en el rango de edad permitido.';
+    } else {
+        return 'No tiene acceso.';
+    }
+}
+
 ?>
