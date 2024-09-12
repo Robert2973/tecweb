@@ -1,3 +1,22 @@
+<?php
+function Letras(){
+    $arreglo = [];
+    for ($i = 97; $i <= 122; $i++){
+        $arreglo[$i] = chr($i);
+    }
+    return $arreglo;
+}
+
+function Control($edad, $sexo) {
+    if ($sexo == 'femenino' && $edad >= 18 && $edad <= 35) {
+        return 'Bienvenida, usted está en el rango de edad permitido.';
+    } else {
+        return 'No tiene acceso.';
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,13 +39,13 @@
     </form>
 
     <?php
-    include 'C:\xampp\htdocs\tecweb\practicas\p07\scr\funciones.php';
     if (isset($_POST['edad']) && isset($_POST['sexo'])) {
         $edad = $_POST['edad'];
         $sexo = $_POST['sexo'];
         echo '<h3>' . Control($edad, $sexo) . '</h3>';
     }
     ?>
+    
 </body>
 
 </html>

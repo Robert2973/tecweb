@@ -52,20 +52,4 @@ function MultiploDoWhile($multi) {
 }
 
 
-function Letras(){
-    $arreglo = [];
-    for ($i = 97; $i <= 122; $i++){
-        $arreglo[$i] = chr($i);
-    }
-    return $arreglo;
-}
-
-function Control($edad, $sexo) {
-    if ($sexo == 'femenino' && $edad >= 18 && $edad <= 35) {
-        return 'Bienvenida, usted está en el rango de edad permitido.';
-    } else {
-        return 'No tiene acceso.';
-    }
-}
-
 ?>
