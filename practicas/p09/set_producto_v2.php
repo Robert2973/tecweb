@@ -57,8 +57,12 @@ if ($result->num_rows > 0) {
 
     if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta_imagen)) {
         // Insertar los datos en la base de datos
-        $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) 
-                VALUES ('$nombre', '$marca', '$modelo', '$precio', '$detalles', '$unidades', '$imagen')";
+        // Esta consulta inserta un nuevo producto en la tabla 'productos'.
+        // Se especifican las columnas 'nombre', 'marca', 'modelo', 'precio', 'detalles', 'unidades', 'imagen' y 'eliminado'.
+        // Se asigna un valor de 0 a la columna 'eliminado' de forma manual para indicar que el producto no está eliminado.
+        // Sin embargo, el campo 'id' se genera automáticamente y no se incluye en esta consulta.
+        $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) 
+                VALUES ('$nombre', '$marca', '$modelo', '$precio', '$detalles', '$unidades', '$imagen', 0)";
 
         if ($conn->query($sql) === TRUE) {
             // Mostrar resumen de los datos insertados en formato XHTML
