@@ -61,8 +61,14 @@ if ($result->num_rows > 0) {
         // Se especifican las columnas 'nombre', 'marca', 'modelo', 'precio', 'detalles', 'unidades', 'imagen' y 'eliminado'.
         // Se asigna un valor de 0 a la columna 'eliminado' de forma manual para indicar que el producto no está eliminado.
         // Sin embargo, el campo 'id' se genera automáticamente y no se incluye en esta consulta.
+        /*
         $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) 
                 VALUES ('$nombre', '$marca', '$modelo', '$precio', '$detalles', '$unidades', '$imagen', 0)";
+        */
+
+         // Nueva consulta 
+         $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) 
+         VALUES ('$nombre', '$marca', '$modelo', '$precio', '$detalles', '$unidades', '$imagen')";
 
         if ($conn->query($sql) === TRUE) {
             // Mostrar resumen de los datos insertados en formato XHTML
