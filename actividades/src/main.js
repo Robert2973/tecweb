@@ -1,3 +1,4 @@
+//FUNICOND E EJEMPLO
 function getDatos()
 {
     var nombre = window.prompt("Nombre: ", "");
@@ -9,3 +10,12 @@ function getDatos()
     var div2 = document.getElementById('edad');
     div2.innerHTML='<h3> Edad: '+ edad + '</h3>';
 }
+
+
+//Ejemplo 1
+function impresion() {
+    var Hola = document.createElement('div');
+    Hola.textContent = 'Hola Mundo';
+    document.getElementById('resultados').appendChild(Hola);
+}
+
