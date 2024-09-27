@@ -49,5 +49,17 @@ function Estructurada2() {
     valor2 = prompt('Introducir segundo número', '');
     var suma = parseInt(valor1) + parseInt(valor2);
     var producto = parseInt(valor1) * parseInt(valor2);
-    document.getElementById('Suma').innerHTML = 'La suma es ' + suma + '<br> El producto es '+ producto;
+    document.getElementById('Suma').innerHTML = 'La suma es ' + suma + '<br> El producto es ' + producto;
+}
+
+//Ejemplo 5
+function if3() {
+    var nombre;
+    var nota;
+    nombre = prompt('Ingresa tu nombre:', '');
+    nota = prompt('Ingresa tu nota:', '');
+    if (nota >= 4) {
+        document.getElementById('if3').innerHTML =  nombre + ' esta aprovada con un ' + nota;    
+    }
+    
 }
