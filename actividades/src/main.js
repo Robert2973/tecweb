@@ -142,19 +142,41 @@ function switc() {
 //Ejemplo 9
 function color() {
     var col;
-    col = prompt('Ingresa el color con que quierar pintar el fondo de la ventana (rojo, verde, azul)' , '' );
+    col = prompt('Ingresa el color con que quierar pintar el fondo de la ventana (rojo, verde, azul)', '');
     switch (col) {
-    case 'rojo': document.bgColor='#ff0000';
-    
-    break;
-    
-    case 'verde': document.bgColor='#00ff00';
-    
-    break;
-    
-    case 'azul': document.bgColor='#0000ff';
-    
-    break;
-    
+        case 'rojo': document.bgColor = '#ff0000';
+
+            break;
+
+        case 'verde': document.bgColor = '#00ff00';
+
+            break;
+
+        case 'azul': document.bgColor = '#0000ff';
+
+            break;
+
     }
+}
+
+function wile() {
+    var x;
+    x = 1;
+    while (x <= 100) {
+        document.getElementById('wile').innerHTML = x + '<br>';
+        x = x + 1;
+    }
+}
+
+function acumulador() {
+    var x = 1;
+    var suma = 0;
+    var valor;
+    while (x <= 5) {
+        valor = prompt('Ingresa el valor:', '');
+        valor = parseInt(valor);
+        suma = suma + valor;
+        x = x + 1;
+    }
+    document.getElementById('acumulador').innerHTML = suma + '<br>';
 }
