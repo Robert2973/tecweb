@@ -78,3 +78,32 @@ function ifelse() {
     }
 
 }
+
+//Ejemplo 7
+function ifelseanidada() {
+    var nota1, nota2, nota3;
+
+    nota1 = prompt('Ingresa 1ra. nota:', '');
+    nota2 = prompt('Ingresa 2da. nota:', '');
+    nota3 = prompt('Ingresa 3ra. nota:', '');
+
+    //Convertimos los 3 string en enteros
+    nota1 = parseInt(nota1);
+    nota2 = parseInt(nota2);
+    nota3 = parseInt(nota3);
+
+    var pro;
+    pro = (nota1 + nota2 + nota3) / 3;
+    if (pro >= 7) {
+        document.getElementById('ifelseanidada').innerHTML = ' aprovado';
+    }
+    else {
+        if (pro >= 4) {
+            document.getElementById('ifelseanidada').innerHTML = ' regular';
+        }
+        else {
+            document.getElementById('ifelseanidada').innerHTML = ' reprobado';
+        }
+    }
+
+}
