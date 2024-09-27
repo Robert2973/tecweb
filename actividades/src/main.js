@@ -21,15 +21,22 @@ function impresion() {
 //Ejemplo 2
 function variables() {
     var nombre = 'Juan';
-        var edad = 10;
-        var altura = 1.92;
-        var casado = false;
+    var edad = 10;
+    var altura = 1.92;
+    var casado = false;
 
-        // Insertar las respuestas en los elementos div
-        document.getElementById('ejercicio1').innerHTML += nombre;
-        document.getElementById('ejercicio2').innerHTML += edad;
-        document.getElementById('ejercicio3').innerHTML += altura;
-        document.getElementById('ejercicio4').innerHTML += casado;
+    // Insertar las respuestas en los elementos div
+    document.getElementById('ejercicio1').innerHTML += nombre;
+    document.getElementById('ejercicio2').innerHTML += edad;
+    document.getElementById('ejercicio3').innerHTML += altura;
+    document.getElementById('ejercicio4').innerHTML += casado;
 }
 
-//Ejemplo 2
+//Ejemplo 3
+function Entrada() {
+    var nombre;
+    var edad;
+    nombre = prompt('Ingresa tu nombre:', '');
+    edad = prompt('Ingresa tu edad: ', '');
+    document.getElementById('Resultado').innerHTML = 'Hola ' + nombre + ', así que tienes ' + edad + ' años.';
+}
