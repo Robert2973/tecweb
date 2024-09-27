@@ -59,7 +59,22 @@ function if3() {
     nombre = prompt('Ingresa tu nombre:', '');
     nota = prompt('Ingresa tu nota:', '');
     if (nota >= 4) {
-        document.getElementById('if3').innerHTML =  nombre + ' esta aprovada con un ' + nota;    
+        document.getElementById('if3').innerHTML = nombre + ' esta aprovada con un ' + nota;
     }
-    
+}
+
+//Ejemplo 6
+function ifelse() {
+    var num1, num2;
+    num1 = prompt('Ingresa el primer número:', '');
+    num2 = prompt('Ingresa el segundo número:', '');
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+    if (num1 > num2) {
+        document.getElementById('ifelse').innerHTML = ' el mayor es ' + num1;
+    }
+    else {
+        document.getElementById('ifelse').innerHTML = ' el menor es ' + num1;
+    }
+
 }
