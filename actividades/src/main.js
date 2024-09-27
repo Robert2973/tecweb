@@ -107,3 +107,34 @@ function ifelseanidada() {
     }
 
 }
+
+//Ejemplo 8
+function switc() {
+    var valor;
+    valor = prompt('Ingresar un valor comprendido entre 1 y 5:', '');
+    //Convertimos a entero
+    valor = parseInt(valor);
+    switch (valor) {
+        case 1: document.getElementById('switc').innerHTML = ' uno ';
+
+            break;
+
+        case 2: document.getElementById('switc').innerHTML = ' dos ';
+
+            break;
+
+        case 3: document.getElementById('switc').innerHTML = ' tres ';
+
+            break;
+
+        case 4: document.getElementById('switc').innerHTML = ' cuatro ';
+
+            break;
+
+        case 5: document.getElementById('switc').innerHTML = ' cinco ';
+
+            break;
+
+        default: document.getElementById('switc').innerHTML = ' debe ingresar un valor comprendido entre 1 y 5. ';
+    }
+}
