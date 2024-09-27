@@ -40,3 +40,14 @@ function Entrada() {
     edad = prompt('Ingresa tu edad: ', '');
     document.getElementById('Resultado').innerHTML = 'Hola ' + nombre + ', así que tienes ' + edad + ' años.';
 }
+
+//Ejemplo 4
+function Estructurada2() {
+    var valor1;
+    var valor2;
+    valor1 = prompt('Introducir primer número:', '');
+    valor2 = prompt('Introducir segundo número', '');
+    var suma = parseInt(valor1) + parseInt(valor2);
+    var producto = parseInt(valor1) * parseInt(valor2);
+    document.getElementById('Suma').innerHTML = 'La suma es ' + suma + '<br> El producto es '+ producto;
+}
