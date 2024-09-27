@@ -159,6 +159,7 @@ function color() {
     }
 }
 
+//Ejemplo 10
 function wile() {
     var x;
     x = 1;
@@ -168,6 +169,7 @@ function wile() {
     }
 }
 
+//Ejemplo 11
 function acumulador() {
     var x = 1;
     var suma = 0;
@@ -179,4 +181,32 @@ function acumulador() {
         x = x + 1;
     }
     document.getElementById('acumulador').innerHTML = suma + '<br>';
+}
+
+//Ejemplo 12
+function doo() {
+    var valor;
+    do {
+        valor = prompt('Ingresa un valor entre 0 y 999:', '');
+        valor = parseInt(valor);
+        document.getElementById('doo').innerHTML = 'El valor' + valor + 'tiene';
+        if (valor < 10)
+            document.getElementById('doo').innerHTML = 'Tiene 1 digitos';
+        else
+            if (valor < 100) {
+                document.getElementById('doo').innerHTML = 'Tiene 2 digitos';
+            }
+            else {
+                document.getElementById('doo').innerHTML = 'Tiene 3 digitos';
+            }
+        document.getElementById('doo').innerHTML = '<br>';
+    } while (valor != 0);
+}
+
+//Ejemplo 13
+function fo() {
+    var f;
+    for (f = 1; f <= 10; f++) {
+        document.getElementById('fo').innerHTML = f + ' ';
+    }
 }
