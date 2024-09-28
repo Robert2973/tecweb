@@ -213,11 +213,23 @@ function fo() {
 
 //Ejemplo 14
 function implementacion1() {
-    document.getElementById('implementacion1').innerHTML = 
+    document.getElementById('implementacion1').innerHTML =
+        "Cuidado<br>" +
+        "Ingresa tu documento correctamente<br>" +
+        "Cuidado<br>" +
+        "Ingresa tu documento correctamente<br>" +
+        "Cuidado<br>" +
+        "Ingresa tu documento correctamente";
+}
+
+//Ejemplo 15
+function implementacion2() {
+    function mostrarMensaje() {
+        document.getElementById('implementacion2').innerHTML +=
             "Cuidado<br>" +
-            "Ingresa tu documento correctamente<br>" +
-            "Cuidado<br>" +
-            "Ingresa tu documento correctamente<br>" +
-            "Cuidado<br>" +
-            "Ingresa tu documento correctamente";
+            "Ingresa tu documento correctamente<br>";
+    }
+    mostrarMensaje();
+    mostrarMensaje();
+    mostrarMensaje();
 }
