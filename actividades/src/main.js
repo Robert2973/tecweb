@@ -210,3 +210,14 @@ function fo() {
         document.getElementById('fo').innerHTML = f + ' ';
     }
 }
+
+//Ejemplo 14
+function implementacion1() {
+    document.getElementById('implementacion1').innerHTML = 
+            "Cuidado<br>" +
+            "Ingresa tu documento correctamente<br>" +
+            "Cuidado<br>" +
+            "Ingresa tu documento correctamente<br>" +
+            "Cuidado<br>" +
+            "Ingresa tu documento correctamente";
+}
