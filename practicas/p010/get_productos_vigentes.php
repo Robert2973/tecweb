@@ -1,85 +1,87 @@
-<?php
-header("Content-Type: application/xhtml+xml; charset=utf-8"); 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Productos Vigentes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h3>Productos Vigentes (No Eliminados)</h3>
 
-// Obtener y validar el parámetro 'tope'
-if (isset($_GET['tope']) && is_numeric($_GET['tope']) && $_GET['tope'] >= 0) {
-    $tope = intval($_GET['tope']);
-} else {
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">';
-    echo '<head><title>Error</title></head>';
-    echo '<body><p>Parámetro "tope" no válido.</p></body>';
-    echo '</html>';
-    exit();
-}
+    <br/>
 
-// Crear conexión con la base de datos
-$link = new mysqli('localhost', 'root', 'Carlos2003', 'marketzone');
+    <?php
+    // SE CREA EL OBJETO DE CONEXION
+    @$link = new mysqli('localhost', 'root', 'Carlos2003', 'marketzone');
 
-// Verificar la conexión
-if ($link->connect_errno) {
-    echo '<?xml version="1.0" encoding="UTF-8"?>';
-    echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">';
-    echo '<head><title>Error de Conexión</title></head>';
-    echo '<body><p>Falló la conexión: '.$link->connect_error.'</p></body>';
-    echo '</html>';
-    exit();
-}
-
-// Consulta preparada
-$stmt = $link->prepare("SELECT * FROM productos WHERE unidades <= ? AND eliminado = 0");
-$stmt->bind_param("i", $tope);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Crear la salida XHTML
-echo '<?xml version="1.0" encoding="UTF-8"?>';
-echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">';
-echo '<head><title>Productos</title>';
-echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />';
-echo '</head>';
-echo '<body>';
-echo '<h3>Productos con Unidades Menores o Iguales a '.$tope.'</h3>';
-
-if ($result->num_rows > 0) {
-    echo '<table class="table">';
-    echo '<thead class="thead-dark">';
-    echo '<tr>';
-    echo '<th scope="col">#</th>';
-    echo '<th scope="col">Nombre</th>';
-    echo '<th scope="col">Marca</th>';
-    echo '<th scope="col">Modelo</th>';
-    echo '<th scope="col">Precio</th>';
-    echo '<th scope="col">Unidades</th>';
-    echo '<th scope="col">Detalles</th>';
-    echo '<th scope="col">Imagen</th>';
-    echo '</tr>';
-    echo '</thead>';
-    echo '<tbody>';
-
-    while ($row = $result->fetch_assoc()) {
-        echo '<tr>';
-        echo '<th scope="row">'.htmlspecialchars($row['id']).'</th>';
-        echo '<td>'.htmlspecialchars($row['nombre']).'</td>';
-        echo '<td>'.htmlspecialchars($row['marca']).'</td>';
-        echo '<td>'.htmlspecialchars($row['modelo']).'</td>';
-        echo '<td>'.htmlspecialchars($row['precio']).'</td>';
-        echo '<td>'.htmlspecialchars($row['unidades']).'</td>';
-        echo '<td>'.htmlspecialchars(utf8_encode($row['detalles'])).'</td>';
-        echo '<td><img src="'.htmlspecialchars($row['imagen']).'" alt="Imagen del producto" style="max-width: 100px; max-height: 100px;" /></td>';
-        echo '</tr>';
+    if ($link->connect_errno) {
+        die('Fallo en la conexión: ' . $link->connect_error . '<br/>');
     }
 
-    echo '</tbody>';
-    echo '</table>';
-} else {
-    echo '<p>No se encontraron productos.</p>';
-}
+    // Consulta a la base de datos para obtener productos no eliminados (eliminado = 0)
+    $sql = "SELECT * FROM productos WHERE eliminado = 0";
+    if ($result = $link->query($sql)) {
+        if ($result->num_rows > 0) {
+            echo '
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Unidades</th>
+                        <th scope="col">Detalles</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>';
 
-// Cerrar conexión
-$stmt->close();
-$link->close();
+                while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                    echo '
+                    <tr>
+                        <th scope="row">' . $row['id'] . '</th>
+                        <td>' . $row['nombre'] . '</td>
+                        <td>' . $row['marca'] . '</td>
+                        <td>' . $row['modelo'] . '</td>
+                        <td>' . $row['precio'] . '</td>
+                        <td>' . $row['unidades'] . '</td>
+                        <td>' . utf8_encode($row['detalles']) . '</td>
+                        <td><img src="' . $row['imagen'] . '" alt="Imagen del producto" width="100"></td>
+                        <td>
+                            <form action="formulario_productos_v2.php" method="GET">
+                                <input type="hidden" name="id" value="' . $row['id'] . '">
+                                <input type="hidden" name="nombre" value="' . $row['nombre'] . '">
+                                <input type="hidden" name="marca" value="' . $row['marca'] . '">
+                                <input type="hidden" name="modelo" value="' . $row['modelo'] . '">
+                                <input type="hidden" name="precio" value="' . $row['precio'] . '">
+                                <input type="hidden" name="unidades" value="' . $row['unidades'] . '">
+                                <input type="hidden" name="detalles" value="' . utf8_encode($row['detalles']) . '">
+                                <input type="hidden" name="imagen" value="' . $row['imagen'] . '">
+                                <input type="submit" value="Modificar">
+                            </form>
+                        </td>
+                    </tr>';
+                }
 
-echo '</body>';
-echo '</html>';
-?>
+            echo '
+                </tbody>
+            </table>';
+        } else {
+            echo '<p>No existen productos vigentes.</p>';
+        }
+
+        $result->free();
+    } else {
+        echo '<p>Error al realizar la consulta: ' . $link->error . '</p>';
+    }
+
+    // Cerrar conexión
+    $link->close();
+    ?>
+</body>
+</html>
