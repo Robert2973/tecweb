@@ -16,7 +16,7 @@
     if(isset($_GET['tope'])) {
         $tope = $_GET['tope'];
     } else {
-        die('<p style="color: red;">"tope" no detectado...</p>');
+        die('<p>"tope" no detectado...</p>');
     }
 
     if (!empty($tope)) {
@@ -59,7 +59,7 @@
                         <td>' . utf8_encode($row['detalles']) . '</td>
                         <td><img src="' . $row['imagen'] . '" alt="Imagen del producto" width="100"></td>
                         <td>
-                            <form action="formulario_productos_v2.php" method="GET">
+                            <form action="formulario_productos_v3.php" method="GET">
                                 <input type="hidden" name="id" value="' . $row['id'] . '">
                                 <input type="hidden" name="nombre" value="' . $row['nombre'] . '">
                                 <input type="hidden" name="marca" value="' . $row['marca'] . '">

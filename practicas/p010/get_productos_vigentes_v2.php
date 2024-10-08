@@ -53,7 +53,7 @@
                         <td>' . utf8_encode($row['detalles']) . '</td>
                         <td><img src="' . $row['imagen'] . '" alt="Imagen del producto" width="100"></td>
                         <td>
-                            <form action="formulario_productos_v2.php" method="GET">
+                            <form action="formulario_productos_v3.php" method="GET">
                                 <input type="hidden" name="id" value="' . $row['id'] . '">
                                 <input type="hidden" name="nombre" value="' . $row['nombre'] . '">
                                 <input type="hidden" name="marca" value="' . $row['marca'] . '">
