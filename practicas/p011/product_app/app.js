@@ -5,8 +5,49 @@ var baseJSON = {
     "modelo": "XX-000",
     "marca": "NA",
     "detalles": "NA",
-    "imagen": "img/default.png"
+    "imagen": "uploads/defecto.png"
   };
+
+// Función para validar el JSON antes de enviarlo, con las validaciones específicas
+function validarProducto(producto) {
+    if (producto.nombre === "" || producto.nombre.length > 100) {
+        alert("El nombre es obligatorio y debe tener 100 caracteres o menos.");
+        return false;
+    }
+
+    if (producto.marca === "") {
+        alert("La marca es obligatoria. Selecciona una opción.");
+        return false;
+    }
+
+    var regexModelo = /^[a-zA-Z0-9]+$/;
+    if (producto.modelo === "" || producto.modelo.length > 25 || !regexModelo.test(producto.modelo)) {
+        alert("El modelo es obligatorio, debe ser alfanumérico y tener 25 caracteres o menos.");
+        return false;
+    }
+
+    if (producto.precio === "" || parseFloat(producto.precio) <= 99.99) {
+        alert("El precio es obligatorio y debe ser mayor a 99.99.");
+        return false;
+    }
+
+    if (producto.detalles.length > 250) {
+        alert("Los detalles deben tener 250 caracteres o menos.");
+        return false;
+    }
+
+    if (producto.unidades === "" || parseInt(producto.unidades) < 0) {
+        alert("Las unidades son obligatorias y deben ser 0 o más.");
+        return false;
+    }
+
+    if (producto.imagen === "") {
+        // Asigna la imagen por defecto si no se selecciona ninguna imagen
+        producto.imagen = 'uploads/defecto.png';
+    }
+
+    return true;
+}
 
 // FUNCIÓN CALLBACK DE BOTÓN "Buscar"
 function buscarProducto(e) {
@@ -71,9 +112,6 @@ function buscarProducto(e) {
     client.send("search=" + encodeURIComponent(search));
 }
 
-
-
-
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
 function agregarProducto(e) {
     e.preventDefault();
@@ -84,8 +122,14 @@ function agregarProducto(e) {
     var finalJSON = JSON.parse(productoJsonString);
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
+
+    // Validar el JSON
+    if (!validarProducto(finalJSON)) {
+        return; // No enviar si hay errores
+    }
+
     // SE OBTIENE EL STRING DEL JSON FINAL
-    productoJsonString = JSON.stringify(finalJSON,null,2);
+    productoJsonString = JSON.stringify(finalJSON, null, 2);
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
@@ -95,6 +139,10 @@ function agregarProducto(e) {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
             console.log(client.responseText);
+
+            // Manejar la respuesta del servidor
+            let response = JSON.parse(client.responseText);
+            alert(response.mensaje); // Muestra el mensaje de éxito o error
         }
     };
     client.send(productoJsonString);
