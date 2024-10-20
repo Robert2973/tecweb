@@ -103,7 +103,7 @@
         <label for="precio">Precio:</label><input type="number" id="precio" name="precio" step="0.01" value="<?= htmlspecialchars($_GET['precio']); ?>" required><br>
         <label for="detalles">Detalles (opcional):</label><input type="text" id="detalles" name="detalles" value="<?= htmlspecialchars($_GET['detalles']); ?>"><br>
         <label for="unidades">Unidades:</label><input type="number" id="unidades" name="unidades" value="<?= htmlspecialchars($_GET['unidades']); ?>" required><br>
-        <label for="imagen">Imagen:</label><input type="file" id="imagen" name="imagen" accept="image/*"><br>
+        <label for="imagen">Imagen:</label><input type="text" id="imagen" name="imagen" placeholder="Ingresa la URL de la imagen" value="<?= htmlspecialchars($_GET['imagen']); ?>"   ><br><br>
       </ul>
     </fieldset>
 
