@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ProductApp</title>
+  <!-- BOOTSTRAP 4  -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+
+  <style>
+    .status-bar {
+      font-size: 0.9em;
+      color: rgb(0, 0, 0);
+      margin-top: 5px;
+    }
+
+    .valid {
+      background-color: #00ff08;
+      /* Verde claro */
+    }
+
+    .invalid {
+      background-color: #f8d7da;
+      /* Rojo claro */
+    }
+
+    .status-message {
+      display: inline-block;
+      /* Asegura que el mensaje ocupe espacio */
+      margin-left: 10px;
+      /* Espacio entre el campo y el mensaje */
+    }
+
+    .status-message.error {
+      color: red;
+      /* Color para mensajes de error */
+    }
+
+    .status-message.success {
+      color: green;
+      /* Color para mensajes de éxito */
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href=".">ProductApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto"></ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="search" id="search" type="search"
+          placeholder="ID, marca o descripción" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row p-4">
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-body">
+            <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
+            <form id="product-form">
+              <div class="form-group">
+                <label for="name">Nombre de producto</label>
+                <input class="form-control" type="text" id="name" placeholder="Nombre de producto" required>
+                <div class="status-bar hidden" id="status-name"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Precio</label>
+                <input class="form-control" type="number" id="precio" placeholder="Precio" step="0.01" min="0" required>
+                <div class="status-bar hidden" id="status-precio"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Unidades</label>
+                <input class="form-control" type="number" id="unidades" placeholder="Unidades" min="1" required>
+                <div class="status-bar hidden" id="status-unidades"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Modelo</label>
+                <input class="form-control" type="text" id="modelo" placeholder="Modelo" required>
+                <div class="status-bar hidden" id="status-modelo"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Marca</label>
+                <input class="form-control" type="text" id="marca" placeholder="Marca" required>
+                <div class="status-bar hidden" id="status-marca"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Detalles</label>
+                <input class="form-control" type="text" id="detalles" placeholder="Detalles" required>
+                <div class="status-bar hidden" id="status-detalles"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Imagen</label>
+                <input class="form-control" type="text" id="imagen" placeholder="URL de la imagen" required>
+                <div class="status-bar hidden" id="status-imagen"></div>
+              </div>
+
+              <input type="hidden" id="productId">
+              <button class="btn btn-primary btn-block text-center" type="submit">
+                Agregar Producto
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLA  -->
+      <div class="col-md-7">
+        <div class="card my-4 " id="product-result">
+          <div class="card-body">
+            <!-- RESULTADO -->
+            <ul id="container"></ul>
+          </div>
+        </div>
+
+        <table class="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <td>Id</td>
+              <td>Nombre</td>
+              <td>Descripción</td>
+            </tr>
+          </thead>
+          <tbody id="products"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!-- Lógica del Frontend -->
+  <script src="app.js"></script>
+</body>
+
+</html>
