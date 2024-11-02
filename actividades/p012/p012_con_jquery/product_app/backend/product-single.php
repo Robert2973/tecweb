@@ -22,7 +22,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         'unidades' => $row['unidades'],
         'modelo' => $row['modelo'],
         'marca' => $row['marca'],
-        'detalles' => $row['detalles']
+        'detalles' => $row['detalles'],
+        'imagen' => $row['imagen']
+        
     );
 }
 if (!empty($json)) {
