@@ -1,0 +1,38 @@
+<CatalogoVOD>
+    <cuenta correo="roberto.hernandez@alumno.com">
+        <perfiles>
+            <perfil usuario="Ana" idioma="Español"/>
+            <perfil usuario="John" idioma="Inglés"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Comedia">
+                <titulo nombre="Superbad" duracion="113"/>
+                <titulo nombre="Step Brothers" duracion="98"/>
+                <titulo nombre="The Hangover" duracion="100"/>
+                <titulo nombre="Groundhog Day" duracion="101"/>
+            </genero>
+            <genero nombre="Acción">
+                <titulo nombre="Mad Max: Fury Road" duracion="120"/>
+                <titulo nombre="John Wick" duracion="101"/>
+                <titulo nombre="Die Hard" duracion="132"/>
+                <titulo nombre="The Dark Knight" duracion="152"/>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Documental">
+                <titulo nombre="Our Planet" duracion="50"/>
+                <titulo nombre="Planet Earth II" duracion="60"/>
+                <titulo nombre="13th" duracion="100"/>
+                <titulo nombre="Inside Job" duracion="108"/>
+            </genero>
+            <genero nombre="Drama">
+                <titulo nombre="Breaking Bad" duracion="47"/>
+                <titulo nombre="The Crown" duracion="58"/>
+                <titulo nombre="Stranger Things" duracion="51"/>
+                <titulo nombre="The Handmaid's Tale" duracion="55"/>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>

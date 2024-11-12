@@ -1,0 +1,97 @@
+<CatalogoVOD>
+    <cuenta>
+        <correo>roberto.hernandez@alumno.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Ana</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+            <perfil>
+                <usuario>John</usuario>
+                <idioma>Inglés</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>Superbad</nombre>
+                    <duracion>113</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Step Brothers</nombre>
+                    <duracion>98</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Hangover</nombre>
+                    <duracion>100</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Groundhog Day</nombre>
+                    <duracion>101</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Acción</nombre>
+                <titulo>
+                    <nombre>Mad Max: Fury Road</nombre>
+                    <duracion>120</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>John Wick</nombre>
+                    <duracion>101</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Die Hard</nombre>
+                    <duracion>132</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Dark Knight</nombre>
+                    <duracion>152</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Documental</nombre>
+                <titulo>
+                    <nombre>Our Planet</nombre>
+                    <duracion>50</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Planet Earth II</nombre>
+                    <duracion>60</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>13th</nombre>
+                    <duracion>100</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Inside Job</nombre>
+                    <duracion>108</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>Breaking Bad</nombre>
+                    <duracion>47</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Crown</nombre>
+                    <duracion>58</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Stranger Things</nombre>
+                    <duracion>51</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Handmaid's Tale</nombre>
+                    <duracion>55</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
